@@ -24,7 +24,7 @@ void reconstructSurface(const PointCloudPtr& input, const SurfelCloudPtr& output
     mls.setSearchRadius(radius);
     mls.setComputeNormals(true);
     mls.setSqrGaussParam(radius * radius);
-    mls.setPolynomialFit(polynomialOrder > 1);
+    // mls.setPolynomialFit(polynomialOrder > 1);
     mls.setPolynomialOrder(polynomialOrder);
     mls.setInputCloud(input);
     mls.process(*output);
