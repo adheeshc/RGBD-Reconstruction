@@ -7,8 +7,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(OpenCV REQUIRED)
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 find_package(PCL REQUIRED)
+find_package(octoMap REQUIRED)
 
+include_directories(${OpenCV_INCLUDE_DIRS})
+include_directories(${EIGEN_INCLUDE_DIR})
 include_directories(${PCL_INCLUDE_DIRS})
+include_directories(${OCTOMAP_INCLUDE_DIRS})
+
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
@@ -20,6 +25,8 @@ add_executable(pcdMapping ${source_files})
 target_link_libraries(pcdMapping ${OpenCV_LIBS})
 target_link_libraries(pcdMapping Eigen3::Eigen)
 target_link_libraries(pcdMapping ${PCL_LIBRARIES})
+
+link_libraries(${OCTOMAP_LIBRARIES})
 
 set(source_files
     src/surfelMapping.cpp
