@@ -19,6 +19,7 @@ set(source_files
 add_executable(pcdMapping ${source_files})
 target_link_libraries(pcdMapping ${OpenCV_LIBS})
 target_link_libraries(pcdMapping Eigen3::Eigen)
+target_link_libraries(pcdMapping ${PCL_LIBRARIES})
 
 set(source_files
     src/surfelMapping.cpp
@@ -27,6 +28,7 @@ set(source_files
 add_executable(surfelMapping ${source_files})
 target_link_libraries(surfelMapping ${OpenCV_LIBS})
 target_link_libraries(surfelMapping Eigen3::Eigen)
+target_link_libraries(surfelMapping ${PCL_LIBRARIES})
 
 set(source_files
     src/octomapMapping.cpp
@@ -35,6 +37,7 @@ set(source_files
 add_executable(octomapMapping ${source_files})
 target_link_libraries(octomapMapping ${OpenCV_LIBS})
 target_link_libraries(octomapMapping Eigen3::Eigen)
+target_link_libraries(octomapMapping ${PCL_LIBRARIES})
 
 # Add the -pthread flag to the compiler and linker flags
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
